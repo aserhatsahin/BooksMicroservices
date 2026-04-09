@@ -1,5 +1,9 @@
-var builder = WebApplication.CreateBuilder(args);
+using Books.APP.Domain;
+using Microsoft.EntityFrameworkCore;
 
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString(nameof(BooksDb));
+builder.Services.AddDbContext<DbContext, BooksDb>(options => options.UseSqlite(connectionString));
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
