@@ -1,6 +1,16 @@
 namespace CORE.APP.Models;
 
-public class Response
+public abstract class Response
 {
-    
+    public virtual int Id { get; set; }
+
+    protected Response()
+    {
+        
+    }
+
+    protected Response(int id)
+    {
+        Id = id;
+    }
 }
