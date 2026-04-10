@@ -45,6 +45,7 @@ public class GenreQueryHandler : Service<Genre>, IRequestHandler<GenreQueryReque
             {
                 Id= bg.Id,  
                 IsTopSeller = bg.Book.IsTopSeller,
+                NumberOfPages = bg.Book.NumberOfPages,
                 Price = bg.Book.Price,
                 AuthorId = bg.Book.AuthorId,
                 GenreIds = bg.Book.GenreIds,

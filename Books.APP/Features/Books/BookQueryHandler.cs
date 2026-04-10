@@ -61,6 +61,7 @@ public class BookQueryHandler : Service<Book>, IRequestHandler<BookQueryRequest,
     {
         var query = DbSet().Select(b => new BookQueryResponse
         {
+            NumberOfPages =  b.NumberOfPages,
             Id = b.Id,
             GenreIds = b.GenreIds,
             IsTopSeller = b.IsTopSeller,

@@ -11,15 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efa76a67-fd20-4825-afc3-4fb3e50a5577" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Authors/AuthorQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookCreateHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookDeleteHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookUpdateHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Genres/GenreQueryHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BooksMicroservices/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BooksMicroservices/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Books.APP.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Books.APP.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Domain/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Domain/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Books.APP/Features/Books/BookCreateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookCreateHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Books.APP/Features/Books/BookDeleteHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookDeleteHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Books.APP/Features/Books/BookQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Books.APP/Features/Books/BookUpdateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookUpdateHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Books.APP/Features/Genres/GenreQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Features/Genres/GenreQueryHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +178,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1775731009725</updated>
-      <workItem from="1775731010731" duration="27391000" />
+      <workItem from="1775731010731" duration="31174000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup 1">
       <option name="closed" value="true" />
@@ -215,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775765430245</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Query Handlers are created&#10;and implemented">
+      <option name="closed" value="true" />
+      <created>1775833439806</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1775833439806</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +245,8 @@
     <MESSAGE value="intial core project created" />
     <MESSAGE value="initial setup2" />
     <MESSAGE value="DB setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="DB setup" />
+    <MESSAGE value="Query Handlers are created&#10;and implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Query Handlers are created&#10;and implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
