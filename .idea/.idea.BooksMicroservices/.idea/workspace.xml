@@ -11,27 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efa76a67-fd20-4825-afc3-4fb3e50a5577" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Books.APP/Domain/Author.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Books.APP/Domain/Book.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Books.APP/Domain/BookGenre.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Books.APP/Domain/BooksDb.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Books.APP/Domain/Genre.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Authors/AuthorQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookCreateHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookDeleteHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookUpdateHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Books.APP/Features/Genres/GenreQueryHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BooksMicroservices/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BooksMicroservices/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.API/Books.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Books.API/Books.API.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Books.API/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Books.APP/Books.APP.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Books.APP.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Controllers/HomeController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Models/ErrorViewModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Views/Home/Index.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Views/Home/Privacy.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Views/Shared/Error.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Views/Shared/_Layout.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Views/Shared/_Layout.cshtml.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Views/Shared/_ValidationScriptsPartial.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Views/_ViewImports.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Views/_ViewStart.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Books.APP/Domain/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Domain/Book.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +50,14 @@
     <setting file="file://$PROJECT_DIR$/Books.APP/Domain/BookGenre.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/Domain/BooksDb.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/Domain/Genre.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Authors/AuthorQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Books/BookCreateHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Books/BookDeleteHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Books/BookQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Books/BookUpdateHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Genres/GenreQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/wwwroot/lib/jquery/dist/jquery.min.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CORE/APP/Domain/Entity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CORE/APP/Models/CommandResponse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CORE/APP/Models/Request.cs" root0="FORCE_HIGHLIGHTING" />
@@ -96,7 +92,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -185,7 +181,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1775731009725</updated>
-      <workItem from="1775731010731" duration="13500000" />
+      <workItem from="1775731010731" duration="27391000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup 1">
       <option name="closed" value="true" />
@@ -211,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775744873898</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DB setup">
+      <option name="closed" value="true" />
+      <created>1775765430245</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1775765430245</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +239,8 @@
     <MESSAGE value="initial setup 1" />
     <MESSAGE value="intial core project created" />
     <MESSAGE value="initial setup2" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial setup2" />
+    <MESSAGE value="DB setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="DB setup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -254,5 +259,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
