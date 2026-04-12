@@ -12,11 +12,9 @@
   <component name="ChangeListManager">
     <list default="true" id="efa76a67-fd20-4825-afc3-4fb3e50a5577" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BooksMicroservices/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BooksMicroservices/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Features/Books/BookCreateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookCreateHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Features/Books/BookDeleteHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookDeleteHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Features/Books/BookQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Features/Books/BookUpdateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Features/Books/BookUpdateHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.APP/Features/Genres/GenreQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.APP/Features/Genres/GenreQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Books.API/Books.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Books.API/Books.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Books.API/Controllers/AuthorsController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Books.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Books.API/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +45,18 @@
     <setting file="file://$PROJECT_DIR$/Books.APP/Domain/BookGenre.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/Domain/BooksDb.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/Domain/Genre.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Authors/AuthorCreateHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Authors/AuthorDeleteHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/Features/Authors/AuthorQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Authors/AuthorUpdateHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/Features/Books/BookCreateHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/Features/Books/BookDeleteHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/Features/Books/BookQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/Features/Books/BookUpdateHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Genres/GenreCreateHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Genres/GenreDeleteHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/Features/Genres/GenreQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Books.APP/Features/Genres/GenreUpdateHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Books.APP/wwwroot/lib/jquery/dist/jquery.min.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CORE/APP/Domain/Entity.cs" root0="FORCE_HIGHLIGHTING" />
@@ -178,7 +182,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1775731009725</updated>
-      <workItem from="1775731010731" duration="31174000" />
+      <workItem from="1775731010731" duration="42365000" />
     </task>
     <task id="LOCAL-00001" summary="initial setup 1">
       <option name="closed" value="true" />
@@ -220,7 +224,31 @@
       <option name="project" value="LOCAL" />
       <updated>1775833439806</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="book crud operations handled">
+      <option name="closed" value="true" />
+      <created>1775836888233</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1775836888233</updated>
+    </task>
+    <task id="LOCAL-00007" summary="AUTHOR CRUD">
+      <option name="closed" value="true" />
+      <created>1775926252424</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1775926252424</updated>
+    </task>
+    <task id="LOCAL-00008" summary="GENRE CRUD">
+      <option name="closed" value="true" />
+      <created>1775926260075</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1775926260075</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +274,10 @@
     <MESSAGE value="initial setup2" />
     <MESSAGE value="DB setup" />
     <MESSAGE value="Query Handlers are created&#10;and implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Query Handlers are created&#10;and implemented" />
+    <MESSAGE value="book crud operations handled" />
+    <MESSAGE value="AUTHOR CRUD" />
+    <MESSAGE value="GENRE CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="GENRE CRUD" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
