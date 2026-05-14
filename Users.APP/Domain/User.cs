@@ -1,4 +1,4 @@
-﻿using CORE.APP.Domain;
+using CORE.APP.Domain;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,7 +18,7 @@ namespace Users.APP.Domain
         [StringLength(50)]
         public string LastName { get; set; }
 
-        public Genders Gender { get; set; } // (int)user.Gender: 1, user.Gender.ToString(): "Woman" 
+        public Genders Gender { get; set; } // (int)user.Gender: 1, user.Gender.ToString(): "Woman"
 
         public DateTime? BirthDate { get; set; }
 
@@ -36,7 +36,7 @@ namespace Users.APP.Domain
 
         public int? GroupId { get; set; } // 0 to M relationship
 
-        public Group Group { get; set; } // navgiation property
+        public Group Group { get; set; } // navigation property
 
         public List<UserRole> UserRoles { get; set; } = new List<UserRole>(); // navigation property
 
@@ -46,5 +46,9 @@ namespace Users.APP.Domain
             get => UserRoles.Select(userRoleEntity => userRoleEntity.RoleId).ToList();
             set => UserRoles = value.Select(roleIdValue => new UserRole() { RoleId = roleIdValue }).ToList();
         }
+
+        public string RefreshToken { get; set; }
+
+        public DateTime? RefreshTokenExpiration { get; set; }
     }
 }
