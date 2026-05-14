@@ -33,7 +33,7 @@ public class AuthorUpdateHandler : Service<Author> , IRequestHandler<AuthorUpdat
         var entity = await DbSet().SingleOrDefaultAsync(b => b.Id == request.Id, cancellationToken);
 
         if (entity is null)
-            return Error("Publisher not found!");
+            return Error("Author not found!");
         
         entity.FirstName = request.FirstName.Trim();
         entity.LastName = request.LastName.Trim();

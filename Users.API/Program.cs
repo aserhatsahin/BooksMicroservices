@@ -1,11 +1,15 @@
-using Books.APP.Domain;
 using Microsoft.EntityFrameworkCore;
+using Users.APP.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString(nameof(BooksDb));
-builder.Services.AddDbContext<DbContext, BooksDb>(options => options.UseSqlite(connectionString));
+//builder.AddServiceDefaults();
+
+// Add services to the container. IoC (Inversion of Control) Container
+// For DbContext Injection
+var connectionString = builder.Configuration.GetConnectionString(nameof(UsersDb)); // "UsersDb"
+builder.Services.AddDbContext<DbContext, UsersDb>(options => options.UseSqlite(connectionString));
+
 // For Mediator Injection
 foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
 {
@@ -18,6 +22,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+//app.MapDefaultEndpoints();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
