@@ -43,7 +43,7 @@ public class GenreQueryHandler : Service<Genre>, IRequestHandler<GenreQueryReque
             Name = b.Name,
             Books = b.BookGenres.Select(bg => new BookQueryResponse
             {
-                Id= bg.Id,  
+                Id = bg.Book.Id,
                 IsTopSeller = bg.Book.IsTopSeller,
                 NumberOfPages = bg.Book.NumberOfPages,
                 Price = bg.Book.Price,
