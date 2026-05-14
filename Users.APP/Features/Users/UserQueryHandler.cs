@@ -114,13 +114,13 @@ namespace Users.APP.Features.Users
                 BirthDateF = userEntity.BirthDate.HasValue ? userEntity.BirthDate.Value.ToString("MM/dd/yyyy") : string.Empty,
                 
                 // Way 1:
-                GroupF = userEntity.Group.Title,
+                GroupF = userEntity.Group != null ? userEntity.Group.Title : null,
                 // Way 2:
-                Group = new GroupQueryResponse
+                Group = userEntity.Group != null ? new GroupQueryResponse
                 {
                     Id = userEntity.Group.Id,
                     Title = userEntity.Group.Title
-                },
+                } : null,
 
                 // Way 1:
                 RolesF = userEntity.UserRoles.Select(userRoleEntity => userRoleEntity.Role.Name).ToList(),
