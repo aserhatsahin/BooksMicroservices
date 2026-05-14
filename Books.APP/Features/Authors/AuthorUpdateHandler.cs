@@ -27,7 +27,7 @@ public class AuthorUpdateHandler : Service<Author> , IRequestHandler<AuthorUpdat
 
     public async Task<CommandResponse> Handle(AuthorUpdateRequest request, CancellationToken cancellationToken)
     {
-        if (await DbSet().AnyAsync(a => a.FirstName == request.FirstName.Trim() &&  a.LastName == request.LastName.Trim(), cancellationToken))
+        if (await DbSet().AnyAsync(a => a.Id != request.Id && a.FirstName == request.FirstName.Trim() && a.LastName == request.LastName.Trim(), cancellationToken))
             return Error("Author with the same name exists!");
         
         var entity = await DbSet().SingleOrDefaultAsync(b => b.Id == request.Id, cancellationToken);
