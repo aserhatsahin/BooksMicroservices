@@ -1,10 +1,9 @@
-using Books.APP.Domain;
+#nullable disable
+using Books.APP.Features.Books;
 using CORE.APP.Models;
 using MediatR;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using CORE.APP.Models;
-using Books.APP.Features.Books;
 using Microsoft.EntityFrameworkCore;
 
 namespace Books.API.Controllers
@@ -19,12 +18,11 @@ namespace Books.API.Controllers
         public BooksController(ILogger<BooksController> logger, IMediator mediator)
         {
             _logger = logger;
-
             _mediator = mediator;
         }
 
-        //GET: api/Books
-
+        // GET: api/Books
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -32,48 +30,41 @@ namespace Books.API.Controllers
             {
                 var response = await _mediator.Send(new BookQueryRequest());
                 var list = await response.ToListAsync();
-
                 if (list.Any())
                     return Ok(list);
-
                 return NoContent();
             }
             catch (Exception exception)
             {
-                _logger.LogError("BooksGet Exception" + exception.Message);
+                _logger.LogError("BooksGet Exception: " + exception.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError,
-                    new CommandResponse(false, "An exception occured during BooksGet"));
+                    new CommandResponse(false, "An exception occured during BooksGet."));
             }
         }
 
-
-        //GET: api/Books/5
-
+        // GET: api/Books/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             try
             {
                 var response = await _mediator.Send(new BookQueryRequest());
-
                 var item = await response.SingleOrDefaultAsync(r => r.Id == id);
-
                 if (item is not null)
                     return Ok(item);
-
                 return NoContent();
             }
             catch (Exception exception)
             {
-                _logger.LogError("BooksGetById Exception" + exception.Message);
+                _logger.LogError("BooksGetById Exception: " + exception.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError,
-                    new CommandResponse(false, "An exception occured during BooksGetById"));
+                    new CommandResponse(false, "An exception occured during BooksGetById."));
             }
         }
 
-
-        //POST: api/Books
-
+        // POST: api/Books
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Post(BookCreateRequest request)
         {
@@ -82,82 +73,75 @@ namespace Books.API.Controllers
                 if (ModelState.IsValid)
                 {
                     var response = await _mediator.Send(request);
-
                     if (response.IsSuccessful)
+                    {
+                        //return CreatedAtAction(nameof(Get), new { id = response.Id }, response);
                         return Ok(response);
-
+                    }
                     ModelState.AddModelError("BooksPost", response.Message);
                 }
-
-                return BadRequest(new CommandResponse(false, string.Join("|", ModelState.Values.SelectMany(v=> v.Errors).Select(e=>e.ErrorMessage))));
+                return BadRequest(new CommandResponse(false,
+                    string.Join("|", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))));
             }
             catch (Exception exception)
             {
                 _logger.LogError("BooksPost Exception: " + exception.Message);
-                // Return 500 Internal Server Error with an error command response with message
-                return StatusCode(StatusCodes.Status500InternalServerError, new CommandResponse(false, "An exception occured during BooksPost.")); 
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new CommandResponse(false, "An exception occured during BooksPost."));
             }
         }
+
         // PUT: api/Books
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         public async Task<IActionResult> Put(BookUpdateRequest request)
         {
             try
             {
-                // Check if the request model is valid through data annotations
                 if (ModelState.IsValid)
                 {
-                    // Send the update request
                     var response = await _mediator.Send(request);
-                    // If update is successful, return 200 OK with success command response
                     if (response.IsSuccessful)
                     {
                         //return NoContent();
                         return Ok(response);
                     }
-                    // If update failed, add error command response message to model state
                     ModelState.AddModelError("BooksPut", response.Message);
                 }
-                // Return 400 Bad Request with all data annotation validation error messages and the error command response message if added seperated by |
-                return BadRequest(new CommandResponse(false, string.Join("|", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))));
+                return BadRequest(new CommandResponse(false,
+                    string.Join("|", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))));
             }
             catch (Exception exception)
             {
-                // Log the exception
                 _logger.LogError("BooksPut Exception: " + exception.Message);
-                // Return 500 Internal Server Error with an error command response with message
-                return StatusCode(StatusCodes.Status500InternalServerError, new CommandResponse(false, "An exception occured during BooksPut.")); 
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new CommandResponse(false, "An exception occured during BooksPut."));
             }
         }
-        //DELETE : api/Books/5
+
+        // DELETE: api/Books/5
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             try
             {
-                // Send the delete request
                 var response = await _mediator.Send(new BookDeleteRequest() { Id = id });
-                // If delete is successful, return 200 OK with success command response
                 if (response.IsSuccessful)
                 {
                     //return NoContent();
                     return Ok(response);
                 }
-                // If delete failed, add error command response message to model state
                 ModelState.AddModelError("BooksDelete", response.Message);
-                // Return 400 Bad Request with the error command response message
-                return BadRequest(new CommandResponse(false, string.Join("|", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))));
+                return BadRequest(new CommandResponse(false,
+                    string.Join("|", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))));
             }
             catch (Exception exception)
             {
-                // Log the exception
                 _logger.LogError("BooksDelete Exception: " + exception.Message);
-                // Return 500 Internal Server Error with an error command response with message
-                return StatusCode(StatusCodes.Status500InternalServerError, new CommandResponse(false, "An exception occured during BooksDelete.")); 
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new CommandResponse(false, "An exception occured during BooksDelete."));
             }
         }
-        
-        
-        
     }
 }
